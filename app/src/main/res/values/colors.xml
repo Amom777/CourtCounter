@@ -7,4 +7,6 @@
     <color name="colorAccentLight">#FF0000FF</color>
     <color name="colorLight">#C5CAE9</color>
     <color name="colorClam">#FFE4E1</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorButtonNormal">#FF9800</color>
 </resources>
