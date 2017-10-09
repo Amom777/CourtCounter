@@ -6,75 +6,101 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    int pointA = 0;
-    int pointB = 0;
-    TextView boardA;
-    TextView boardB;
-
-
+    /** My Private */
+    int scoreTeamA = 0;
+    int scoreTeamB = 0;
+    /** My Private */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        boardA = (TextView) findViewById(R.id.board_score_a);
-        boardB = (TextView) findViewById(R.id.board_score_b);
+
+        /** My Code For Team A*/
     }
-    public void a3Points(View view){
-        pointA = pointA +3;
-        display(pointA);
+    public void addOneForTeamA(View view){
+        scoreTeamA = scoreTeamA +1;
+        displayForTeamA(scoreTeamA);
     }
-    public void a2Points(View view){
-        pointA = pointA +2;
-        display(pointA);
+    public void addTwoForTeamA(View view){
+        scoreTeamA = scoreTeamA +2;
+        displayForTeamA(scoreTeamA);
     }
-    public void afreeThrow(View view){
-        pointA = pointA +1;
-        display(pointA);
+    public void addThreeForTeamA(View view){
+        scoreTeamA = scoreTeamA +3;
+        displayForTeamA(scoreTeamA);
     }
-    public void reset(View view){
-        if(pointA>0 || pointB>0){
-            pointA=0;
-            pointB=0;
-        }
-//        displayForTeamA(scoreA);
-//        displayForTeamB(scoreB);
-        display(pointA);
-        display1(pointB);
+    private void displayForTeamA(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_a_score);
+        scoreView.setText("" + score);
     }
-    /**
-     * Displays the given score for Team A.
-     */
+        /** For Team B */
+    public void addOneForTeamB(View view){
+        scoreTeamB = scoreTeamB +1;
+        displayForTeamB(scoreTeamB);
+    }
+    public void addTwoForTeamB(View view){
+        scoreTeamB = scoreTeamB +2;
+        displayForTeamB(scoreTeamB);
+    }
+    public void addThreeForTeamB(View view){
+        scoreTeamB = scoreTeamB +3;
+        displayForTeamB(scoreTeamB);
+    }
+    private void displayForTeamB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
+        scoreView.setText("" + score);
+    }
+
+    public void resetScore(View view){
+        scoreTeamA=0;
+        scoreTeamB=0;
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
+        /** My Code */
+    }
+        /**
+         * Displays the given score for Team A.Code By Udacity
+         */
 //    public void displayForTeamA(int score) {
-//        TextView scoreView = (TextView) findViewById(R.id.board_score_a);
+//        TextView scoreView = (TextView) findViewById(R.id.team_a_score);
 //        scoreView.setText(String.valueOf(score));
 //    }
-
-    private void display(int number) {
-        TextView quantityTextView = (TextView) findViewById(R.id.board_score_a);
-        quantityTextView.setText("" + number);
-    }
+//    public void addOneForTeamA (View view){
+//        scoreTeamA = scoreTeamA + 1;
+//        displayForTeamA(scoreTeamA);
+//    }
+//    public void addTwoForTeamA (View view){
+//        scoreTeamA = scoreTeamA + 2;
+//        displayForTeamA(scoreTeamA);
+//    }
+//    public void addThreeForTeamA (View view){
+//        scoreTeamA = scoreTeamA + 3;
+//        displayForTeamA(scoreTeamA);
+//    }
     /**
-     * Displays the given score for Team B.
+     * Displays the given score for Team B.Code By Udacity
      */
 //    public void displayForTeamB(int score) {
-//        TextView scoreView = (TextView) findViewById(R.id.board_score_b);
+//        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
 //        scoreView.setText(String.valueOf(score));
 //    }
-
-    private void display1(int number) {
-        TextView quantityTextView = (TextView) findViewById(R.id.board_score_b);
-        quantityTextView.setText("" + number);
-    }
-    public void b3Points(View view){
-        pointB = pointB +3;
-        display1(pointB);
-    }
-    public void b2Points(View view){
-        pointB = pointB +2;
-        display1(pointB);
-    }
-    public void bfreeThrow(View view){
-        pointB = pointB +1;
-        display1(pointB);
-    }
+//    public void addOneForTeamB (View view){
+//        scoreTeamB = scoreTeamB + 1;
+//        displayForTeamB(scoreTeamB);
+//    }
+//    public void addTwoForTeamB (View view){
+//        scoreTeamB = scoreTeamB + 2;
+//        displayForTeamB(scoreTeamB);
+//    }
+//    public void addThreeForTeamB (View view){
+//        scoreTeamB = scoreTeamB + 3;
+//        displayForTeamB(scoreTeamB);
+//    }
+//    public void resetScore (View view){
+//        scoreTeamA = 0;
+//        scoreTeamB = 0;
+//        displayForTeamA(scoreTeamA);
+//        displayForTeamB(scoreTeamB);
+//    }
 }
+
